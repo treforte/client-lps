@@ -230,6 +230,18 @@ footer{background:var(--panel);padding:32px 40px;border-top:1px solid var(--bord
   .final-cta{padding:52px 20px}
   footer{flex-direction:column;align-items:center;text-align:center;padding:24px 20px}
 }
+
+/* ── OT REDIRECT MODAL ── */
+.ot-redirect-wrap{text-align:center;padding:32px 20px 40px}
+.ot-redirect-icon{font-size:48px;margin-bottom:16px;display:block}
+.ot-redirect-title{font-family:'Cinzel',serif;font-size:22px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:6px}
+.ot-redirect-sub{font-family:'Lato',sans-serif;font-size:13px;color:var(--muted);margin-bottom:8px;letter-spacing:.06em}
+.ot-redirect-stars{color:var(--gold);font-size:18px;letter-spacing:3px;margin-bottom:28px}
+.ot-redirect-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Cinzel',serif;font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--deep);background:var(--gold);padding:20px 44px;text-decoration:none;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 24px rgba(201,168,76,.4);border:none;cursor:pointer}
+.ot-redirect-btn:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 6px 32px rgba(201,168,76,.55)}
+.ot-redirect-note{font-family:'Lato',sans-serif;font-size:11px;color:rgba(255,255,255,.35);margin-top:14px;letter-spacing:.08em}
+.ot-redirect-badges{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px;padding-top:24px;border-top:1px solid var(--border-gold)}
+.ot-badge{font-family:'Lato',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:rgba(201,168,76,.07);border:1px solid var(--border-gold);padding:6px 14px}
 </style>
 </head>
 <body>
@@ -522,16 +534,21 @@ footer{background:var(--panel);padding:32px 40px;border-top:1px solid var(--bord
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body">
-      <p class="ot-note">Powered by OpenTable — your reservation is confirmed instantly</p>
-      <div class="ot-embed-wrap">
-        <iframe
-          src="https://www.opentable.com/widget/reservation/loader?rid=1341085&type=standard&theme=standard&color=1&dark=true&iframe=true&domain=com&lang=en-US&newtab=false&ot_source=Restaurant%20website"
-          width="100%"
-          height="540"
-          frameborder="0"
-          scrolling="no"
-          title="Reserve at Elvira's DC Ranch on OpenTable">
-        </iframe>
+      <p class="ot-note">You'll be taken to OpenTable to complete your reservation — it only takes 30 seconds.</p>
+      <div class="ot-redirect-wrap">
+        <div class="ot-redirect-icon">🪔</div>
+        <h3 class="ot-redirect-title">Elvira's DC Ranch</h3>
+        <p class="ot-redirect-sub">4.5 Stars · 635 Reviews · Scottsdale, AZ</p>
+        <div class="ot-redirect-stars">★★★★½</div>
+        <a href="https://www.opentable.com/r/elviras-dc-ranch-phoenix" target="_blank" rel="noopener" class="ot-redirect-btn" onclick="handleOTClick()">
+          Reserve Your Table on OpenTable →
+        </a>
+        <p class="ot-redirect-note">Opens in a new tab · Confirmation is instant · No account required</p>
+        <div class="ot-redirect-badges">
+          <div class="ot-badge">Good for Special Occasions</div>
+          <div class="ot-badge">Great for Creative Cocktails</div>
+          <div class="ot-badge">Charming</div>
+        </div>
       </div>
     </div>
   </div>
@@ -551,6 +568,11 @@ window.addEventListener('scroll',function(){
 },{passive:true});
 
 /* ── MODAL ── */
+function handleOTClick(){
+  fbq('track','InitiateCheckout',{content_name:'Table Reservation',content_category:'Restaurant'});
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:'ot_click'});
+}
 function openModal(){
   document.getElementById('otModal').classList.add('open');
   document.body.style.overflow='hidden';
