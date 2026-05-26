@@ -44,8 +44,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--forest)}
-.nav-phone{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--forest);text-decoration:none;letter-spacing:.02em;transition:color .2s}
-.nav-phone:hover{color:var(--forest-lt)}
+.nav-phone{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--forest);background:var(--white);padding:11px 20px;border:1.5px solid rgba(44,74,53,.25);text-decoration:none;transition:all .2s;border-radius:2px}
+.nav-phone:hover{background:var(--forest-pale);border-color:rgba(44,74,53,.5)}
 .nav-cta{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--white);background:var(--forest);padding:11px 22px;border:none;cursor:pointer;transition:all .2s;text-decoration:none;border-radius:2px}
 .nav-cta:hover{background:var(--forest-lt)}
 
@@ -69,8 +69,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .hero-cta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .btn-hero-primary{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--white);background:var(--forest);padding:17px 36px;border:none;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-block;border-radius:2px}
 .btn-hero-primary:hover{background:var(--forest-lt);transform:translateY(-1px)}
-.btn-hero-call{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,.75);text-decoration:none;letter-spacing:.04em;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;transition:all .2s}
-.btn-hero-call:hover{color:#fff;border-color:rgba(255,255,255,.7)}
+.btn-hero-call{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);background:rgba(255,255,255,.92);padding:17px 28px;border:none;text-decoration:none;transition:all .2s;border-radius:2px;display:inline-flex;align-items:center;gap:8px}
+.btn-hero-call:hover{background:#fff;transform:translateY(-1px)}
 
 /* Hero form card */
 .hero-card{background:rgba(248,246,242,.98);border-radius:6px;overflow:hidden;box-shadow:0 12px 56px rgba(0,0,0,.28),0 2px 8px rgba(0,0,0,.12)}
@@ -241,11 +241,11 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .final-title{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,58px);font-weight:400;color:#fff;line-height:1.05;margin-bottom:16px}
 .final-title em{font-style:italic;color:#a8d5b5}
 .final-sub{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:300;color:rgba(255,255,255,.65);margin-bottom:36px;line-height:1.7}
-.final-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.final-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
 .btn-final-primary{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--charcoal);background:#a8d5b5;padding:18px 44px;border:none;cursor:pointer;transition:all .2s;text-decoration:none;border-radius:3px;box-shadow:0 4px 20px rgba(168,213,181,.35)}
 .btn-final-primary:hover{background:#c0e2cd;transform:translateY(-1px)}
-.btn-final-call{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;letter-spacing:.04em;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:2px;transition:all .2s}
-.btn-final-call:hover{color:#fff;border-color:rgba(255,255,255,.6)}
+.btn-final-call{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);background:rgba(255,255,255,.88);padding:17px 28px;text-decoration:none;transition:all .2s;border-radius:2px;display:inline-flex;align-items:center;gap:8px}
+.btn-final-call:hover{background:#fff;transform:translateY(-1px)}
 .final-note{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.35);margin-top:20px;letter-spacing:.06em}
 
 /* ── FOOTER ── */
@@ -351,7 +351,7 @@ footer{background:var(--ink);padding:44px 48px;display:flex;align-items:flex-sta
       </div>
       <div class="hero-cta-row">
         <a href="#" onclick="scrollToForm(event)" class="btn-hero-primary">Schedule a Consultation</a>
-        <a href="tel:6029564800" class="btn-hero-call" onclick="fireCall()">or call 602.956.4800</a>
+        <a href="tel:6029564800" class="btn-hero-call" onclick="fireCall()">📞 602.956.4800</a>
       </div>
     </div>
 
@@ -718,7 +718,7 @@ footer{background:var(--ink);padding:44px 48px;display:flex;align-items:flex-sta
     <p class="final-sub">Schedule a consultation with Dr. Ellingson's team. We'll review your history, answer your questions, and build a plan around what's right for your health — not a production quota.</p>
     <div class="final-btns">
       <a href="#" onclick="scrollToForm(event)" class="btn-final-primary">Schedule a Consultation</a>
-      <a href="tel:6029564800" class="btn-final-call" onclick="fireCall()">or call 602.956.4800</a>
+      <a href="tel:6029564800" class="btn-final-call" onclick="fireCall()">📞 602.956.4800</a>
     </div>
     <p class="final-note">3611 N 7th Street, Phoenix, AZ 85014 · Mon–Thu 8:00 AM–4:00 PM · Fri 9:00 AM–4:00 PM</p>
   </div>
