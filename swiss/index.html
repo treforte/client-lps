@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swiss Biologic Dentistry | Biological & Holistic Dentistry in Phoenix, AZ</title>
+<meta name="description" content="Phoenix's premier biological dentistry practice. Ceramic implants, SMART mercury removal, biocompatible materials, no metal. Dr. Amelia Ellingson DMD. 5.0 stars · 78 reviews. Schedule your consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#ffffff;
+  --bone:#f8f6f2;
+  --bone-dk:#ede9e1;
+  --forest:#2c4a35;
+  --forest-lt:#3d6347;
+  --forest-pale:#edf2ee;
+  --swiss-red:#742f2f;
+  --swiss-red-lt:#8b3535;
+  --charcoal:#1e2820;
+  --ink:#141a16;
+  --text:#2a3028;
+  --muted:#6b7a6e;
+  --muted-lt:#9aaa9d;
+  --border:#d4cfc4;
+  --border-forest:rgba(44,74,53,.2);
+  --sh:0 2px 24px rgba(30,40,32,.08);
+  --sh-lg:0 8px 48px rgba(30,40,32,.14);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'DM Sans',sans-serif;background:var(--bone);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ── GRAIN ── */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.6;mix-blend-mode:multiply}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(248,246,242,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;transition:all .3s}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo-cross{width:28px;height:28px;background:var(--swiss-red);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-logo-cross svg{width:16px;height:16px;fill:#fff}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:15px;font-weight:500;color:var(--charcoal);letter-spacing:.04em;line-height:1.2}
+.nav-logo-sub{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--forest)}
+.nav-phone{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--forest);text-decoration:none;letter-spacing:.02em;transition:color .2s}
+.nav-phone:hover{color:var(--forest-lt)}
+.nav-cta{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--white);background:var(--forest);padding:11px 22px;border:none;cursor:pointer;transition:all .2s;text-decoration:none;border-radius:2px}
+.nav-cta:hover{background:var(--forest-lt)}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;padding:0}
+.hero-bg{position:absolute;inset:0;background:
+  linear-gradient(to right,rgba(20,26,22,.88) 0%,rgba(20,26,22,.6) 50%,rgba(20,26,22,.3) 100%),
+  url('https://static.wixstatic.com/media/245da8_4eb8ec5e60c448f2a2267de6f0a76621~mv2_d_5405_3604_s_4_2.jpg/v1/fill/w_2880,h_1920,al_c,q_80/riccardo-chiarini-365677-unsplash.jpg') center/cover no-repeat;
+  z-index:0}
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:140px 48px 80px;width:100%;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:end}
+.hero-left{}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:6px 14px;margin-bottom:24px}
+.hero-pill-dot{width:6px;height:6px;border-radius:50%;background:#6fcf97;flex-shrink:0}
+.hero-pill span{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(42px,5.5vw,72px);font-weight:400;color:#fff;line-height:1.05;margin-bottom:20px;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:#a8d5b5}
+.hero-sub{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:300;color:rgba(255,255,255,.75);line-height:1.7;max-width:480px;margin-bottom:32px}
+.hero-proof-row{display:flex;align-items:center;gap:24px;margin-bottom:32px;flex-wrap:wrap}
+.hero-proof-item{display:flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,.8)}
+.hero-proof-item::before{content:'';width:16px;height:16px;border-radius:50%;background:var(--forest-lt);flex-shrink:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:cover}
+.hero-cta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.btn-hero-primary{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--white);background:var(--forest);padding:17px 36px;border:none;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-block;border-radius:2px}
+.btn-hero-primary:hover{background:var(--forest-lt);transform:translateY(-1px)}
+.btn-hero-call{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,.75);text-decoration:none;letter-spacing:.04em;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;transition:all .2s}
+.btn-hero-call:hover{color:#fff;border-color:rgba(255,255,255,.7)}
+
+/* Hero form card */
+.hero-card{background:rgba(248,246,242,.97);border-radius:4px;overflow:hidden;box-shadow:var(--sh-lg)}
+.hero-card-head{background:var(--forest);padding:20px 24px}
+.hero-card-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:#fff;margin-bottom:3px}
+.hero-card-sub{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.04em}
+.hero-card-body{padding:22px 24px 24px}
+.cf{margin-bottom:14px}
+.cf label{display:block;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.cf input,.cf select,.cf textarea{width:100%;padding:12px 14px;background:#fff;border:1px solid var(--border);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none;border-radius:2px}
+.cf input:focus,.cf select:focus,.cf textarea:focus{border-color:var(--forest)}
+.cf input::placeholder,.cf textarea::placeholder{color:var(--muted-lt);font-style:italic}
+.cf select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%236b7a6e' d='M5 6L0 0h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;cursor:pointer}
+.cf select option{background:#fff;color:var(--text)}
+.cf-row{display:flex;gap:10px}
+.cf-row .cf{flex:1}
+.btn-form-submit{width:100%;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--forest);padding:15px;border:none;cursor:pointer;transition:all .2s;border-radius:2px;margin-top:6px}
+.btn-form-submit:hover{background:var(--forest-lt)}
+.form-note{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--muted-lt);text-align:center;margin-top:10px;line-height:1.5}
+.form-divider{display:flex;align-items:center;gap:10px;margin:14px 0}
+.form-divider::before,.form-divider::after{content:'';flex:1;height:1px;background:var(--border)}
+.form-divider span{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-lt)}
+.btn-call-card{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--forest);background:transparent;padding:13px;border:1px solid var(--border-forest);cursor:pointer;transition:all .2s;text-decoration:none;border-radius:2px}
+.btn-call-card:hover{background:var(--forest-pale);border-color:var(--forest)}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--charcoal);padding:16px 48px;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.05em;color:rgba(255,255,255,.65)}
+.trust-item strong{color:rgba(255,255,255,.95);font-weight:600}
+.trust-sep{width:1px;height:20px;background:rgba(255,255,255,.12)}
+
+/* ── SECTIONS ── */
+.section-eyebrow{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--forest);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.section-eyebrow::after{content:'';flex:1;max-width:40px;height:1px;background:var(--forest);opacity:.4}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:400;color:var(--charcoal);line-height:1.1;margin-bottom:14px}
+.section-title em{font-style:italic;color:var(--forest)}
+.section-sub{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:300;color:var(--muted);line-height:1.75;max-width:560px}
+
+/* ── PHILOSOPHY / ICP RESONANCE ── */
+.philosophy-section{background:var(--bone);padding:88px 48px}
+.philosophy-inner{max-width:1100px;margin:0 auto}
+.icp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:52px;border:1px solid var(--border)}
+.icp-card{background:var(--bone);padding:36px 30px;transition:background .25s}
+.icp-card:hover{background:var(--white)}
+.icp-quote{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:var(--charcoal);line-height:1.65;margin-bottom:16px;border-left:2px solid var(--forest);padding-left:16px}
+.icp-answer{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;color:var(--muted);line-height:1.7}
+.icp-answer strong{color:var(--forest);font-weight:600}
+
+/* ── COMPARISON TABLE ── */
+.compare-section{background:var(--forest);padding:88px 48px}
+.compare-inner{max-width:1100px;margin:0 auto}
+.compare-section .section-eyebrow{color:rgba(255,255,255,.6)}
+.compare-section .section-eyebrow::after{background:rgba(255,255,255,.3)}
+.compare-section .section-title{color:#fff}
+.compare-section .section-title em{color:#a8d5b5}
+.compare-section .section-sub{color:rgba(255,255,255,.7);max-width:600px;margin-top:8px}
+.compare-table{margin-top:48px;border:1px solid rgba(255,255,255,.12);overflow:hidden;border-radius:4px}
+.compare-head{display:grid;grid-template-columns:2fr 1fr 1fr;background:rgba(0,0,0,.2)}
+.compare-head-cell{padding:18px 24px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.compare-head-cell.highlight{color:#a8d5b5}
+.compare-row{display:grid;grid-template-columns:2fr 1fr 1fr;border-top:1px solid rgba(255,255,255,.08);transition:background .2s}
+.compare-row:hover{background:rgba(255,255,255,.04)}
+.compare-row.alt{background:rgba(255,255,255,.03)}
+.compare-cell{padding:16px 24px;font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:0}
+.compare-cell.feature{font-weight:500;color:rgba(255,255,255,.9)}
+.compare-cell.feature small{display:block;font-size:11px;font-weight:400;color:rgba(255,255,255,.45);margin-top:2px;letter-spacing:.02em}
+.check-yes{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(168,213,181,.2);color:#a8d5b5;font-size:14px}
+.check-no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.06);color:rgba(255,255,255,.25);font-size:14px}
+.check-sometimes{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:rgba(255,200,100,.12);color:rgba(255,200,100,.7);font-size:11px;font-weight:600;letter-spacing:-.02em}
+.compare-note{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.4);margin-top:16px;line-height:1.6;font-style:italic}
+
+/* ── SERVICES ── */
+.services-section{background:var(--white);padding:88px 48px}
+.services-inner{max-width:1100px;margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:52px;border:1px solid var(--border)}
+.svc-card{background:var(--white);padding:32px 28px;transition:background .25s;position:relative;overflow:hidden}
+.svc-card:hover{background:var(--forest-pale)}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--forest);transform:scaleX(0);transition:transform .35s ease;transform-origin:left}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:400;color:var(--bone-dk);line-height:1;margin-bottom:14px;display:block}
+.svc-name{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--forest);margin-bottom:10px}
+.svc-desc{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;color:var(--muted);line-height:1.72}
+.svc-tag{display:inline-block;margin-top:12px;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);background:var(--forest-pale);padding:4px 10px;border-radius:2px}
+
+/* ── PHILOSOPHY PILLARS ── */
+.pillars-section{background:var(--bone-dk);padding:88px 48px;border-top:1px solid var(--border)}
+.pillars-inner{max-width:1100px;margin:0 auto}
+.pillars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:52px}
+.pillar-card{background:var(--white);padding:36px 32px;border:1px solid var(--border);border-left:3px solid var(--forest);transition:box-shadow .2s}
+.pillar-card:hover{box-shadow:var(--sh-lg)}
+.pillar-icon{font-size:24px;margin-bottom:14px;display:block}
+.pillar-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--charcoal);margin-bottom:10px}
+.pillar-body{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;color:var(--muted);line-height:1.78}
+.pillar-body strong{color:var(--charcoal);font-weight:500}
+
+/* ── CREDENTIALS STRIP ── */
+.creds-strip{background:var(--charcoal);padding:32px 48px;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.cred-item{text-align:center}
+.cred-name{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:6px}
+
+/* ── REVIEWS ── */
+.reviews-section{background:var(--bone);padding:88px 48px;border-top:1px solid var(--border)}
+.reviews-inner{max-width:1100px;margin:0 auto}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.rev-card{background:var(--white);padding:32px;border:1px solid var(--border);border-radius:2px;transition:all .2s}
+.rev-card:hover{border-color:var(--forest);box-shadow:var(--sh)}
+.rev-stars{color:#2c7a4e;font-size:14px;letter-spacing:1px;margin-bottom:14px}
+.rev-text{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:var(--charcoal);line-height:1.7;margin-bottom:18px}
+.rev-author{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.06em}
+.rev-source{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:var(--muted-lt);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+.score-banner{background:var(--forest);border-radius:2px;padding:24px 28px;display:flex;align-items:center;gap:24px;margin-bottom:36px}
+.score-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:400;color:#fff;line-height:1}
+.score-detail strong{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:#fff;display:block;margin-bottom:3px}
+.score-detail span{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.6)}
+.score-stars-lg{color:#a8d5b5;font-size:20px;letter-spacing:2px;margin-bottom:4px}
+
+/* ── DR. ELLINGSON / ABOUT ── */
+.doctor-section{background:var(--white);padding:88px 48px;border-top:1px solid var(--border)}
+.doctor-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:start}
+.doctor-photo-block{position:relative}
+.doctor-photo-frame{border:1px solid var(--border);padding:8px;background:var(--white)}
+.doctor-photo-frame img{width:100%;display:block;filter:grayscale(8%)}
+.doctor-name-plate{margin-top:16px;padding:16px;background:var(--forest);text-align:center}
+.doctor-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:#fff}
+.doctor-title{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:3px}
+.doctor-cred-list{display:flex;flex-direction:column;gap:8px;margin-top:20px}
+.doctor-cred{display:flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);line-height:1.4}
+.doctor-cred::before{content:'';width:6px;height:1px;background:var(--forest);flex-shrink:0}
+.doctor-bio h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;color:var(--charcoal);margin-bottom:16px;line-height:1.2}
+.doctor-bio h3 em{font-style:italic;color:var(--forest)}
+.doctor-bio p{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.cert-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.cert-chip{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);background:var(--forest-pale);padding:7px 12px;border:1px solid var(--border-forest);border-radius:2px}
+
+/* ── FAQ ── */
+.faq-section{background:var(--bone);padding:88px 48px;border-top:1px solid var(--border)}
+.faq-inner{max-width:780px;margin:0 auto}
+.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:0;border:1px solid var(--border)}
+.faq-item{background:var(--white);overflow:hidden;border-bottom:1px solid var(--border)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:22px 24px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;color:var(--charcoal);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;line-height:1.4;transition:background .2s}
+.faq-q:hover{background:var(--bone)}
+.faq-icon{width:22px;height:22px;border-radius:50%;background:var(--forest-pale);border:1px solid var(--border-forest);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--forest);font-size:14px;font-weight:300;transition:all .25s}
+.faq-item.open .faq-icon{background:var(--forest);color:#fff;border-color:var(--forest);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease,padding .25s;padding:0 24px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;color:var(--muted);line-height:1.8}
+.faq-item.open .faq-a{max-height:400px;padding:0 24px 22px}
+
+/* ── FINAL CTA ── */
+.final-cta{background:var(--charcoal);padding:96px 48px;text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(44,74,53,.4) 0%,transparent 70%)}
+.final-cta-inner{position:relative;z-index:1;max-width:660px;margin:0 auto}
+.final-eyebrow{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:rgba(168,213,181,.7);margin-bottom:20px}
+.final-title{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,58px);font-weight:400;color:#fff;line-height:1.05;margin-bottom:16px}
+.final-title em{font-style:italic;color:#a8d5b5}
+.final-sub{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:300;color:rgba(255,255,255,.65);margin-bottom:36px;line-height:1.7}
+.final-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn-final-primary{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--charcoal);background:#a8d5b5;padding:18px 44px;border:none;cursor:pointer;transition:all .2s;text-decoration:none;border-radius:2px}
+.btn-final-primary:hover{background:#c0e2cd;transform:translateY(-1px)}
+.btn-final-call{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;letter-spacing:.04em;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:2px;transition:all .2s}
+.btn-final-call:hover{color:#fff;border-color:rgba(255,255,255,.6)}
+.final-note{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.35);margin-top:20px;letter-spacing:.06em}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:44px 48px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;border-top:1px solid rgba(255,255,255,.06)}
+.footer-logo{display:flex;align-items:center;gap:10px}
+.footer-logo-cross{width:24px;height:24px;background:var(--swiss-red);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.footer-logo-cross svg{width:13px;height:13px;fill:#fff}
+.footer-logo-text{font-family:'Playfair Display',serif;font-size:14px;font-weight:500;color:rgba(255,255,255,.75);letter-spacing:.03em;line-height:1.3}
+.footer-logo-sub{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.footer-col-label{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px}
+.footer-col a,.footer-col p{font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.45);letter-spacing:.02em;text-decoration:none;transition:color .2s;line-height:2;display:block}
+.footer-col a:hover{color:rgba(255,255,255,.8)}
+.footer-copy{width:100%;border-top:1px solid rgba(255,255,255,.06);padding-top:20px;font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.06em}
+
+/* ── MOBILE STICKY BAR ── */
+.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:600;flex-direction:row;box-shadow:0 -2px 20px rgba(0,0,0,.15);border-top:1px solid rgba(255,255,255,.1)}
+.sticky-call{flex:1;background:var(--white);color:var(--forest);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:16px 8px;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;border-right:1px solid var(--border)}
+.sticky-schedule{flex:2;background:var(--forest);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:16px 8px;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.hero-left>*{animation:fadeUp .8s ease both}
+.hero-pill{animation-delay:.1s}
+.hero h1{animation-delay:.22s}
+.hero-sub{animation-delay:.34s}
+.hero-proof-row{animation-delay:.46s}
+.hero-cta-row{animation-delay:.58s}
+
+/* ── MOBILE ── */
+@media(max-width:767px){
+  .nav{padding:0 16px}
+  .nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr;padding:100px 20px 20px}
+  .hero-card{margin-top:24px}
+  .trust-bar{padding:14px 20px;gap:16px}
+  .trust-sep{display:none}
+  .philosophy-section,.compare-section,.services-section,.pillars-section,.reviews-section,.doctor-section,.faq-section,.final-cta{padding:56px 20px}
+  .icp-grid,.services-grid{grid-template-columns:1fr}
+  .pillars-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .doctor-inner{grid-template-columns:1fr}
+  .compare-head,.compare-row{grid-template-columns:1.5fr 1fr 1fr}
+  .compare-head-cell,.compare-cell{padding:12px 14px;font-size:12px}
+  .creds-strip{padding:24px 20px;gap:24px}
+  footer{padding:32px 20px}
+  .sticky-bar{display:flex}
+  body{padding-bottom:56px}
+  .cf-row{flex-direction:column;gap:0}
+  .final-cta{padding:64px 20px}
+}
+@media(min-width:768px) and (max-width:1023px){
+  .icp-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-inner{grid-template-columns:1fr 380px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="nav-logo">
+    <div class="nav-logo-cross">
+      <svg viewBox="0 0 16 16"><rect x="6" y="1" width="4" height="14"/><rect x="1" y="6" width="14" height="4"/></svg>
+    </div>
+    <div>
+      <div class="nav-logo-text">Swiss Biologic Dentistry</div>
+      <div class="nav-logo-sub">Phoenix, Arizona</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#compare">Why Biologic</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px">
+    <a href="tel:6029564800" class="nav-phone">602.956.4800</a>
+    <a href="#schedule" onclick="scrollToForm(event)" class="nav-cta">Schedule Consultation</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="schedule">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-pill">
+        <div class="hero-pill-dot"></div>
+        <span>5.0 Stars · 78 Google Reviews · Phoenix, AZ</span>
+      </div>
+      <h1>Dentistry That Works<br><em>With</em> Your Body,<br>Not Against It.</h1>
+      <p class="hero-sub">Biological dentistry uses only the most biocompatible materials available — no metals, no mercury, no compromises. At Swiss Biologic Dentistry, your overall health is part of every treatment decision.</p>
+      <div class="hero-proof-row">
+        <div class="hero-proof-item">Metal-free restorations</div>
+        <div class="hero-proof-item">SMART-certified mercury removal</div>
+        <div class="hero-proof-item">No unnecessary X-rays</div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="#" onclick="scrollToForm(event)" class="btn-hero-primary">Schedule a Consultation</a>
+        <a href="tel:6029564800" class="btn-hero-call" onclick="fireCall()">or call 602.956.4800</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-card-head">
+        <div class="hero-card-title">Request Your Consultation</div>
+        <div class="hero-card-sub">No obligation · We respond within 1 business day</div>
+      </div>
+      <div class="hero-card-body">
+        <div class="cf-row">
+          <div class="cf"><label>First Name</label><input type="text" placeholder="First" id="fname"></div>
+          <div class="cf"><label>Last Name</label><input type="text" placeholder="Last" id="lname"></div>
+        </div>
+        <div class="cf"><label>Phone Number</label><input type="tel" placeholder="(602) 000-0000" id="phone"></div>
+        <div class="cf"><label>Email Address</label><input type="email" placeholder="you@email.com" id="email"></div>
+        <div class="cf"><label>Primary Interest</label>
+          <select id="service">
+            <option value="">What brings you in?</option>
+            <option>New patient · General biological dentistry</option>
+            <option>Ceramic dental implants</option>
+            <option>Mercury / amalgam removal (SMART)</option>
+            <option>Ceramic fillings / replacing metal</option>
+            <option>Orthodontics / Myobrace</option>
+            <option>Sleep appliances / TMJ</option>
+            <option>Pinhole gum rejuvenation</option>
+            <option>Teeth whitening / veneers / aesthetics</option>
+            <option>Other / not sure yet</option>
+          </select>
+        </div>
+        <div class="cf"><label>Brief Note (optional)</label><textarea placeholder="Anything we should know before your visit?" id="notes" style="min-height:60px;resize:none"></textarea></div>
+        <button class="btn-form-submit" onclick="handleSubmit()">Request Consultation →</button>
+        <p class="form-note">🔒 Private &amp; confidential · Your information is never shared</p>
+        <div class="form-divider"><span>or call us directly</span></div>
+        <a href="tel:6029564800" class="btn-call-card" onclick="fireCall()">📞 &nbsp;602.956.4800</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><strong>5.0 ★</strong> · 78 Google Reviews</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item">IAOMT · IABDM · HDA Member</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item">SMART-Certified Mercury Removal</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item">International Academy of Ceramic Implants</div>
+  <div class="trust-sep"></div>
+  <div class="trust-item"><strong>10+ Years</strong> · Phoenix's Biological Dentistry Practice</div>
+</div>
+
+<!-- ICP RESONANCE — "You've been wondering..." -->
+<section class="philosophy-section" id="philosophy">
+  <div class="philosophy-inner">
+    <div class="section-eyebrow">We Hear This Every Week</div>
+    <h2 class="section-title">If You've Been Asking These Questions,<br>You're in the <em>Right Place</em></h2>
+    <div class="icp-grid">
+      <div class="icp-card">
+        <p class="icp-quote">"I have old mercury fillings and I've been worried about them for years. Is removal actually safe?"</p>
+        <p class="icp-answer">It depends entirely on how it's done. Improper amalgam removal can actually increase your exposure to mercury vapor. We use the <strong>SMART protocol (Safe Mercury Amalgam Removal Technique)</strong> — the gold standard established by the IAOMT — with special suction, rubber dams, and protective measures that significantly reduce vapor exposure during removal.</p>
+      </div>
+      <div class="icp-card">
+        <p class="icp-quote">"I need an implant but I don't want titanium in my body. What are my options?"</p>
+        <p class="icp-answer">Ceramic zirconia implants are a well-established, metal-free alternative. <strong>Zirconia is non-metallic, non-corrosive, and highly biocompatible</strong> — it doesn't conduct electricity or interfere with energy fields the way metal implants can. We are members of the International Academy of Ceramic Implants and place ceramic implants regularly.</p>
+      </div>
+      <div class="icp-card">
+        <p class="icp-quote">"Every dentist I've seen just wants to fill things quickly. I want someone who actually explains what's going on."</p>
+        <p class="icp-answer">We intentionally <strong>over-schedule time for every appointment</strong> — for consultations and procedures alike. Our patients are health-conscious and curious, and we believe you should understand why we recommend what we recommend. Questions are encouraged. We're not interested in rushing.</p>
+      </div>
+      <div class="icp-card">
+        <p class="icp-quote">"I've read that oral health is connected to overall health but my regular dentist never mentions it."</p>
+        <p class="icp-answer">It's a central part of our philosophy. Oral infections, periodontal disease, and toxic materials in the mouth don't stay local — <strong>they have pathways into your lymphatic and circulatory systems</strong>. Biological dentistry considers your mouth as part of your whole body, not a separate compartment.</p>
+      </div>
+      <div class="icp-card">
+        <p class="icp-quote">"I'm nervous about dental X-rays. My last office seemed to take them constantly."</p>
+        <p class="icp-answer">We share that concern. We take <strong>the fewest X-rays clinically necessary</strong> and use equipment calibrated to produce the lowest radiation levels possible for accurate diagnostics. We'll always explain why a specific image is needed and won't take one without a clear reason.</p>
+      </div>
+      <div class="icp-card">
+        <p class="icp-quote">"I want a dentist who treats me like a person, not a procedure."</p>
+        <p class="icp-answer">We opened this practice because we saw what corporate dentistry was doing to patients. Here, <strong>your care is never shaped by production targets or quotas</strong>. Dr. Ellingson's team is small by design — because a smaller practice means every patient gets the attention they deserve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="compare-section" id="compare">
+  <div class="compare-inner">
+    <div class="section-eyebrow">Understanding Your Options</div>
+    <h2 class="section-title" style="color:#fff">Biological vs. <em>Conventional</em> Dentistry</h2>
+    <p class="section-sub">The same core goal — a healthy mouth — approached very differently. Here's what sets the two philosophies apart.</p>
+
+    <div class="compare-table">
+      <div class="compare-head">
+        <div class="compare-head-cell">Approach</div>
+        <div class="compare-head-cell highlight">Biological Dentistry<br><small style="font-size:9px;letter-spacing:.1em;color:rgba(168,213,181,.6)">Swiss Biologic</small></div>
+        <div class="compare-head-cell">Conventional Dentistry</div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-cell feature">Filling materials<small>What goes into your tooth</small></div>
+        <div class="compare-cell"><span class="check-yes">✓</span>&nbsp; Zirconia ceramic, inert ceramics — no metal, no leaching</div>
+        <div class="compare-cell"><span class="check-sometimes">~</span>&nbsp; May include amalgam (mercury alloy) or metal-based composites</div>
+      </div>
+      <div class="compare-row alt">
+        <div class="compare-cell feature">Implant materials<small>For missing teeth</small></div>
+        <div class="compare-cell"><span class="check-yes">✓</span>&nbsp; Metal-free zirconia ceramic implants available</div>
+        <div class="compare-cell"><span class="check-no">–</span>&nbsp; Primarily titanium; ceramic rarely offered</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell feature">Mercury removal protocol<small>Amalgam safety</small></div>
+        <div class="compare-cell"><span class="check-yes">✓</span>&nbsp; SMART-certified (IAOMT) — specialized protective measures</div>
+        <div class="compare-cell"><span class="check-no">–</span>&nbsp; Standard removal without vapor protection measures</div>
+      </div>
+      <div class="compare-row alt">
+        <div class="compare-cell feature">X-ray philosophy<small>Diagnostic imaging</small></div>
+        <div class="compare-cell"><span class="check-yes">✓</span>&nbsp; Fewest necessary; lowest-radiation equipment available</div>
+        <div class="compare-cell"><span class="check-sometimes">~</span>&nbsp; Varies; often follows fixed annual schedules</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell feature">Whole-body connection<small>Oral-systemic link</small></div>
+        <div class="compare-cell"><span class="check-yes">✓</span>&nbsp; Central to every treatment recommendation</div>
+        <div class="compare-cell"><span class="check-no">–</span>&nbsp; Typically not addressed in treatment planning</div>
+      </div>
+      <div class="compare-row alt">
+        <div class="compare-cell feature">Treatment approach<small>Philosophy</small></div>
+        <div class="compare-cell"><span class="check-yes">✓</span>&nbsp; Minimally invasive; preserve natural tooth structure first</div>
+        <div class="compare-cell"><span class="check-sometimes">~</span>&nbsp; Varies by provider; restorative often favored over preservation</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell feature">Appointment pacing<small>Your time in the chair</small></div>
+        <div class="compare-cell"><span class="check-yes">✓</span>&nbsp; Over-scheduled intentionally — never rushed</div>
+        <div class="compare-cell"><span class="check-sometimes">~</span>&nbsp; Often optimized for patient volume; wait times common</div>
+      </div>
+      <div class="compare-row alt">
+        <div class="compare-cell feature">Ozone &amp; natural therapies<small>Adjunct treatments</small></div>
+        <div class="compare-cell"><span class="check-yes">✓</span>&nbsp; Ozone therapy, PRF injections, natural bone grafting available</div>
+        <div class="compare-cell"><span class="check-no">–</span>&nbsp; Rarely offered in conventional practices</div>
+      </div>
+    </div>
+    <p class="compare-note">This comparison reflects general philosophical differences between practice models. Individual providers vary. All dental care decisions should be made in consultation with a licensed dentist.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-inner">
+    <div class="section-eyebrow">What We Offer</div>
+    <h2 class="section-title">Services Built Around<br>Your <em>Whole Health</em></h2>
+    <p class="section-sub">Every service is performed with biocompatible materials and minimally invasive techniques.</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <span class="svc-num">01</span>
+        <div class="svc-name">Ceramic Dental Implants</div>
+        <p class="svc-desc">Metal-free zirconia implants for missing teeth. Non-corrosive, non-conductive, and highly biocompatible. A complete alternative to titanium for patients who prefer to avoid metal in the body.</p>
+        <span class="svc-tag">Metal-Free</span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-num">02</span>
+        <div class="svc-name">SMART Mercury Removal</div>
+        <p class="svc-desc">Safe Mercury Amalgam Removal Technique — the IAOMT-established protocol for removing old amalgam fillings with protective measures designed to reduce vapor exposure during the process.</p>
+        <span class="svc-tag">IAOMT Certified</span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-num">03</span>
+        <div class="svc-name">Ceramic &amp; Zirconia Restorations</div>
+        <p class="svc-desc">Crowns, onlays, bridges, and fillings using zirconia and inert ceramic materials. Strong, long-lasting, and free of the metals and chemicals found in conventional restorations.</p>
+        <span class="svc-tag">No Metal</span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-num">04</span>
+        <div class="svc-name">Biological Orthodontics</div>
+        <p class="svc-desc">Myobrace, palatal expanders, clear aligners, and Healthy Start — orthodontic approaches that address root causes of misalignment including airway and tongue posture, not just tooth position.</p>
+        <span class="svc-tag">Airway-Focused</span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-num">05</span>
+        <div class="svc-name">Pinhole Gum Rejuvenation</div>
+        <p class="svc-desc">Dr. Chao's Pinhole® Surgical Technique for gum recession — a minimally invasive alternative to traditional gum grafting. No cutting, no sutures, faster recovery.</p>
+        <span class="svc-tag">Minimally Invasive</span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-num">06</span>
+        <div class="svc-name">Sleep &amp; Airway Appliances</div>
+        <p class="svc-desc">Custom oral appliances for sleep apnea, snoring, clenching, and grinding. A dental approach to sleep and airway health — often an alternative to CPAP for appropriate candidates.</p>
+        <span class="svc-tag">Sleep Health</span>
+      </div>
+    </div>
+    <p style="font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted-lt);text-align:center;margin-top:24px">Also offered: Veneers · Teeth Whitening · PRF Microneedling · Cavitation Treatment · Sinus Lift · Natural Bone Grafting · Ozone Therapy · Sedative Fillings</p>
+  </div>
+</section>
+
+<!-- PHILOSOPHY PILLARS -->
+<section class="pillars-section">
+  <div class="pillars-inner">
+    <div class="section-eyebrow">Our Commitments</div>
+    <h2 class="section-title">The Principles That <em>Guide</em> Every Visit</h2>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <span class="pillar-icon">🌿</span>
+        <h3 class="pillar-title">Most Biocompatible Materials Available</h3>
+        <p class="pillar-body">We research every material we use and will switch when something safer and equally durable becomes available. <strong>Zirconia ceramic</strong> for restorations and implants. Inert ceramic cements and filling materials that don't leach. Nothing goes in your mouth that we wouldn't be comfortable with ourselves.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-icon">🔬</span>
+        <h3 class="pillar-title">Minimally Invasive — Always</h3>
+        <p class="pillar-body">You only have one set of teeth. Our starting position is always: <strong>preserve as much natural tooth structure as possible</strong>. We use techniques that minimize vibration and heat transfer. We won't recommend a procedure if a less invasive option exists and is appropriate for your situation.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-icon">🫀</span>
+        <h3 class="pillar-title">Mouth-Body Connection</h3>
+        <p class="pillar-body">Oral health doesn't stay in your mouth. <strong>Infections, periodontal disease, and materials in your mouth travel through your lymphatic and circulatory systems</strong>. We consider how every treatment decision affects your overall health — not just the tooth in front of us.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-icon">⏱️</span>
+        <h3 class="pillar-title">We Schedule More Time Than You'd Expect</h3>
+        <p class="pillar-body">Corporate dentistry runs on patient volume. We don't. <strong>Every appointment is over-scheduled</strong> so no one — patient or clinician — is ever rushed. Consultations are long enough for your questions. Procedures have enough time to be done right the first time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS STRIP -->
+<div class="creds-strip">
+  <div class="cred-item">
+    <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)">IAOMT</div>
+    <div class="cred-name">Int'l Academy of Oral Medicine &amp; Toxicology</div>
+  </div>
+  <div class="cred-item">
+    <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)">IABDM</div>
+    <div class="cred-name">Academy of Biological Dentistry</div>
+  </div>
+  <div class="cred-item">
+    <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)">HDA</div>
+    <div class="cred-name">Holistic Dental Association</div>
+  </div>
+  <div class="cred-item">
+    <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)">IAOCI</div>
+    <div class="cred-name">Int'l Academy of Ceramic Implants</div>
+  </div>
+  <div class="cred-item">
+    <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)">SMART</div>
+    <div class="cred-name">Certified Mercury Removal Protocol</div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="reviews-inner">
+    <div class="section-eyebrow">Patient Experiences</div>
+    <h2 class="section-title">5.0 Stars. 78 Reviews.<br>Real <em>Patients.</em></h2>
+    <div class="score-banner">
+      <div class="score-num">5.0</div>
+      <div class="score-detail">
+        <div class="score-stars-lg">★★★★★</div>
+        <strong>78 Verified Google Reviews</strong>
+        <span>Phoenix's top-rated biological dentistry practice</span>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"I have been looking for a holistic dentist for years. Dr. Ellingson and her team are everything I hoped to find. They took time to explain every step, never rushed me, and I finally feel like my oral health is connected to the rest of my care."</p>
+        <div class="rev-author">Sarah M.</div>
+        <div class="rev-source">Google · Verified Patient</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"I came in specifically to have old amalgam fillings removed safely. The SMART protocol here is the real thing — they explained every protective measure before starting. I felt completely informed and comfortable. My experience at Swiss Biologic was genuinely different."</p>
+        <div class="rev-author">James T.</div>
+        <div class="rev-source">Google · Verified Patient</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"After years of dreading the dentist, I actually look forward to my appointments here. The office is calm, the team is thorough, and not once have I felt pressured into a procedure. This is what dental care should look like."</p>
+        <div class="rev-author">Michelle R.</div>
+        <div class="rev-source">Google · Verified Patient</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTOR SECTION -->
+<section class="doctor-section">
+  <div class="doctor-inner">
+    <div class="doctor-photo-block">
+      <div class="doctor-photo-frame">
+        <img src="https://static.wixstatic.com/media/245da8_f52c2795c495446898cdd2a5b1ef1df3~mv2.jpg/v1/fill/w_600,h_750,al_c,q_85/245da8_f52c2795c495446898cdd2a5b1ef1df3~mv2.jpg" alt="Dr. Amelia Ellingson, DMD" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="doctor-name-plate">
+        <div class="doctor-name">Dr. Amelia M. Ellingson</div>
+        <div class="doctor-title">DMD · Founder, Swiss Biologic Dentistry</div>
+      </div>
+      <div class="doctor-cred-list">
+        <div class="doctor-cred">IAOMT Member · SMART Certified</div>
+        <div class="doctor-cred">IABDM · Academy of Biological Dentistry</div>
+        <div class="doctor-cred">Holistic Dental Association</div>
+        <div class="doctor-cred">International Academy of Ceramic Implants</div>
+        <div class="doctor-cred">10+ Years in Biological Dentistry, Phoenix</div>
+      </div>
+    </div>
+    <div class="doctor-bio">
+      <h3>A Practice Built on a Different<br><em>Philosophy of Care</em></h3>
+      <p>Dr. Ellingson founded Swiss Biologic Dentistry because she saw a gap in the Phoenix market — patients who were asking serious questions about what goes into their bodies, and a dental industry that wasn't listening. The practice was built from the ground up around biological principles: biocompatible materials, minimally invasive techniques, and a whole-body perspective on oral health.</p>
+      <p>Every material used in this practice has been researched. Every protocol has been chosen for patient safety first. When a better material becomes available — stronger and more biocompatible — the practice switches. That commitment to staying current is what the certifications represent.</p>
+      <p>The practice is small by design. A smaller patient base means more time with each person, better continuity of care, and a team that actually knows you when you walk through the door.</p>
+      <div class="cert-chips">
+        <div class="cert-chip">DMD</div>
+        <div class="cert-chip">IAOMT</div>
+        <div class="cert-chip">SMART Certified</div>
+        <div class="cert-chip">IABDM</div>
+        <div class="cert-chip">Ceramic Implants</div>
+        <div class="cert-chip">Pinhole Technique</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="section-eyebrow" style="justify-content:center">Common Questions</div>
+    <h2 class="section-title" style="text-align:center">What Patients Ask<br><em>Before</em> Their First Visit</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="faqToggle(this)">What is biological dentistry and how is it different from regular dentistry?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Biological dentistry applies the same core dental skills as conventional dentistry — fillings, crowns, implants, cleanings — but with a different philosophy around materials and approach. Biological dentists prioritize biocompatible materials (ceramics over metals), minimally invasive techniques, and consider the mouth as part of the whole body rather than an isolated system. The goal is the same: a healthy mouth. The methodology is more conservative and materials-conscious.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faqToggle(this)">Is it safe to have old mercury amalgam fillings removed?<span class="faq-icon">+</span></button>
+        <div class="faq-a">The safety of amalgam removal depends heavily on the protocol used. Improper removal can temporarily increase a patient's exposure to mercury vapor. The SMART protocol (Safe Mercury Amalgam Removal Technique), established by the IAOMT and used at Swiss Biologic Dentistry, includes protective measures — rubber dams, high-volume suction, protective coverings, and specific drilling patterns — designed to significantly reduce vapor release and patient exposure during removal. We are SMART-certified and follow this protocol for all amalgam removal procedures.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faqToggle(this)">What are ceramic implants and how do they compare to titanium?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Ceramic zirconia implants are a metal-free alternative to the titanium implants used in conventional dentistry. Zirconia is non-metallic, non-corrosive, and does not conduct electricity or release ions into surrounding tissue the way metal implants can. Ceramic implants have been in clinical use for decades and have a well-documented success rate. They are not appropriate for every clinical situation — factors like bone density, jaw anatomy, and the number of implants needed affect suitability. We'll evaluate your specific situation and discuss all options during your consultation.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faqToggle(this)">Do you see patients who have never been to a biological dentist before?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes — the majority of our new patients are coming from conventional dental practices and want to make a change. Whether you're concerned about existing metal restorations, looking for a more thoughtful approach to your care, or simply want a dentist who takes time to explain what they're doing and why, you're in the right place. We recommend scheduling a consultation first so we can understand your history and concerns before any treatment is discussed.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faqToggle(this)">Do you accept dental insurance?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Please contact our office directly to discuss your specific insurance situation. Because biological dentistry often uses materials and techniques that differ from those typically covered by standard dental plans, coverage varies considerably. Our team can help you understand what may be covered and what out-of-pocket costs to expect before you commit to any treatment.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faqToggle(this)">What does a first appointment look like?<span class="faq-icon">+</span></button>
+        <div class="faq-a">New patient appointments at Swiss Biologic Dentistry are longer than what most patients are used to — intentionally so. We take time to review your health history, understand your concerns and goals, perform a thorough examination, and explain what we see and what we recommend. We'll also take any diagnostic imaging that is genuinely needed — not a routine series. You'll leave with a clear picture of your oral health and a plan, not a rushed treatment checklist.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="final-eyebrow">Phoenix's Biological Dentistry Practice</div>
+    <h2 class="final-title">Ready for Dentistry<br>That Actually <em>Listens?</em></h2>
+    <p class="final-sub">Schedule a consultation with Dr. Ellingson's team. We'll review your history, answer your questions, and build a plan around what's right for your health — not a production quota.</p>
+    <div class="final-btns">
+      <a href="#" onclick="scrollToForm(event)" class="btn-final-primary">Schedule a Consultation</a>
+      <a href="tel:6029564800" class="btn-final-call" onclick="fireCall()">or call 602.956.4800</a>
+    </div>
+    <p class="final-note">3611 N 7th Street, Phoenix, AZ 85014 · Mon–Thu 8:00 AM–4:00 PM · Fri 9:00 AM–4:00 PM</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">
+      <div class="footer-logo-cross">
+        <svg viewBox="0 0 16 16"><rect x="6" y="1" width="4" height="14"/><rect x="1" y="6" width="14" height="4"/></svg>
+      </div>
+      <div>
+        <div class="footer-logo-text">Swiss Biologic Dentistry</div>
+        <div class="footer-logo-sub">Phoenix, Arizona</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-label">Visit</div>
+    <p>3611 N 7th Street, Suite 100</p>
+    <p>Phoenix, AZ 85014</p>
+    <p>Mon–Thu: 8:00 AM – 4:00 PM</p>
+    <p>Fri: 9:00 AM – 4:00 PM</p>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-label">Contact</div>
+    <a href="tel:6029564800">602.956.4800</a>
+    <a href="mailto:dental@swissbiologic.com">dental@swissbiologic.com</a>
+    <a href="https://www.swissbiologic.com" target="_blank">swissbiologic.com</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-label">Services</div>
+    <a href="https://www.swissbiologic.com/ceramicimplants" target="_blank">Ceramic Implants</a>
+    <a href="https://www.swissbiologic.com/mercuryremoval" target="_blank">Mercury Removal</a>
+    <a href="https://www.swissbiologic.com/orthodontics" target="_blank">Orthodontics</a>
+    <a href="https://www.swissbiologic.com/contact" target="_blank">Schedule Appointment</a>
+  </div>
+  <div class="footer-copy">© 2026 Swiss Biologic Dentistry, LLC · Dr. Amelia M. Ellingson, DMD · All rights reserved · This page is for informational purposes only and does not constitute dental or medical advice. Individual results vary. Consult a licensed dental professional for care specific to your situation.</div>
+</footer>
+
+<!-- MOBILE STICKY BAR -->
+<div class="sticky-bar">
+  <a href="tel:6029564800" class="sticky-call" onclick="fireCall()">📞 Call</a>
+  <a href="#" onclick="scrollToForm(event)" class="sticky-schedule">Schedule Consultation →</a>
+</div>
+
+<script>
+/* ── META PIXEL — replace YOUR_PIXEL_ID ── */
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','YOUR_PIXEL_ID');
+fbq('track','PageView');
+
+/* ── TRACKING ── */
+function fireCall(){
+  fbq('track','Contact',{content_name:'Phone Call',content_category:'Dental'});
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:'call_click',practice:'swiss-biologic'});
+}
+function fireFormStart(){
+  fbq('track','InitiateCheckout',{content_name:'Consultation Request',content_category:'Dental'});
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:'form_start',practice:'swiss-biologic'});
+}
+
+/* ── SCROLL TO FORM ── */
+function scrollToForm(e){
+  if(e) e.preventDefault();
+  var el=document.getElementById('schedule');
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+/* ── NAV ACTIVE LINKS ── */
+var sections=['philosophy','compare','services','reviews','faq'];
+var navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',function(){
+  var pos=window.scrollY+120;
+  sections.forEach(function(id){
+    var el=document.getElementById(id);
+    if(el&&pos>=el.offsetTop&&pos<el.offsetTop+el.offsetHeight){
+      navLinks.forEach(function(a){a.style.color='';});
+      var active=document.querySelector('.nav-links a[href="#'+id+'"]');
+      if(active) active.style.color='var(--forest)';
+    }
+  });
+},{passive:true});
+
+/* ── PHONE FORMATTER ── */
+var ph=document.getElementById('phone');
+if(ph){
+  ph.addEventListener('input',function(e){
+    var v=e.target.value.replace(/\D/g,'');
+    if(v.length>10) v=v.slice(0,10);
+    if(v.length>=7) v='('+v.slice(0,3)+') '+v.slice(3,6)+'-'+v.slice(6);
+    else if(v.length>=4) v='('+v.slice(0,3)+') '+v.slice(3);
+    else if(v.length>=1) v='('+v;
+    e.target.value=v;
+  });
+}
+
+/* ── FORM ── */
+document.querySelectorAll('#fname,#email').forEach(function(el){
+  el.addEventListener('focus',fireFormStart,{once:true});
+});
+
+function handleSubmit(){
+  var fname=document.getElementById('fname');
+  var lname=document.getElementById('lname');
+  var phone=document.getElementById('phone');
+  var email=document.getElementById('email');
+  var service=document.getElementById('service');
+  var notes=document.getElementById('notes');
+  var ok=true;
+  [fname,lname,phone,email].forEach(function(f){f.style.borderColor='';});
+  if(!fname.value.trim()){fname.style.borderColor='#742f2f';ok=false;}
+  if(!lname.value.trim()){lname.style.borderColor='#742f2f';ok=false;}
+  if(phone.value.replace(/\D/g,'').length!==10){phone.style.borderColor='#742f2f';ok=false;}
+  if(!email.value.trim()||email.value.indexOf('@')===-1){email.style.borderColor='#742f2f';ok=false;}
+  if(ok){
+    fbq('track','Lead',{content_name:'Consultation Request',content_category:'Dental',value:0,currency:'USD'});
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push({event:'lead_submit',practice:'swiss-biologic',service:service.value});
+    /* Replace with your Zapier webhook */
+    fetch('https://hooks.zapier.com/hooks/catch/YOUR_ZAPIER_HOOK/',{
+      method:'POST',
+      body:JSON.stringify({
+        source:'Swiss Biologic LP',
+        first_name:fname.value.trim(),
+        last_name:lname.value.trim(),
+        phone:phone.value.trim(),
+        email:email.value.trim(),
+        service:service.value,
+        notes:notes.value.trim(),
+        timestamp:new Date().toLocaleString('en-US',{timeZone:'America/Phoenix'})
+      })
+    }).catch(function(){});
+    var btn=document.querySelector('.btn-form-submit');
+    btn.textContent='✓ Request Received — We\'ll Be in Touch Within 1 Business Day';
+    btn.style.background='#2c7a4e';
+    btn.disabled=true;
+    btn.style.cursor='default';
+  }
+}
+
+/* ── FAQ ── */
+function faqToggle(btn){
+  var item=btn.closest('.faq-item');
+  var open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});
+  if(!open) item.classList.add('open');
+}
+
+/* ── SCROLL REVEAL ── */
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      entry.target.style.opacity='1';
+      entry.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.icp-card,.svc-card,.pillar-card,.rev-card,.compare-row').forEach(function(el){
+  el.style.opacity='0';
+  el.style.transform='translateY(16px)';
+  el.style.transition='opacity .5s ease, transform .5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
