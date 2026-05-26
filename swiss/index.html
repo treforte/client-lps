@@ -778,6 +778,32 @@ footer{background:var(--ink);padding:44px 48px;display:flex;align-items:flex-sta
 </div>
 
 <script>
+/* ══════════════════════════════════════════
+   UTM + GCLID CAPTURE — runs on every page load
+   Stores to sessionStorage so params persist
+   even if user navigates within the LP
+   ══════════════════════════════════════════ */
+(function(){
+  var params=['utm_source','utm_campaign','utm_medium','utm_term','utm_content',
+              'gclid','gbraid','wbraid','fbclid','ttclid','msclkid','li_fat_id'];
+  var qs=new URLSearchParams(window.location.search);
+  params.forEach(function(p){
+    var val=qs.get(p);
+    if(val) sessionStorage.setItem('tf_'+p,val);
+  });
+  // Always update final_url on each load
+  sessionStorage.setItem('tf_final_url',window.location.href);
+  sessionStorage.setItem('tf_landing_page',window.location.pathname);
+  sessionStorage.setItem('tf_referrer',document.referrer||'direct');
+})();
+
+/* Helper — reads from URL first, falls back to sessionStorage */
+function getParam(name){
+  return new URLSearchParams(window.location.search).get(name)
+    || sessionStorage.getItem('tf_'+name)
+    || '';
+}
+
 /* ── META PIXEL — replace YOUR_PIXEL_ID ── */
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','YOUR_PIXEL_ID');
@@ -856,18 +882,53 @@ function handleSubmit(){
     window.dataLayer=window.dataLayer||[];
     window.dataLayer.push({event:'lead_submit',practice:'swiss-biologic',service:service.value});
     /* Replace with your Zapier webhook */
+    /* ── BUILD UNIFIED LEAD PAYLOAD ── */
+    var payload={
+      /* Contact */
+      source:          'Swiss Biologic LP',
+      first_name:      fname.value.trim(),
+      last_name:       lname.value.trim(),
+      full_name:       fname.value.trim()+' '+lname.value.trim(),
+      phone:           phone.value.trim(),
+      email:           email.value.trim(),
+      service:         service.value,
+      /* Attribution — UTM */
+      utm_source:      getParam('utm_source'),
+      utm_campaign:    getParam('utm_campaign'),
+      utm_medium:      getParam('utm_medium'),
+      utm_term:        getParam('utm_term'),
+      utm_content:     getParam('utm_content'),
+      /* Click IDs — for enhanced conversions */
+      gclid:           getParam('gclid'),
+      gbraid:          getParam('gbraid'),
+      wbraid:          getParam('wbraid'),
+      fbclid:          getParam('fbclid'),
+      msclkid:         getParam('msclkid'),
+      ttclid:          getParam('ttclid'),
+      li_fat_id:       getParam('li_fat_id'),
+      /* Page context */
+      final_url:       getParam('final_url')||window.location.href,
+      landing_page:    getParam('landing_page')||window.location.pathname,
+      referrer:        getParam('referrer')||document.referrer||'direct',
+      /* Session */
+      timestamp:       new Date().toLocaleString('en-US',{timeZone:'America/Phoenix'}),
+      timestamp_utc:   new Date().toISOString(),
+      user_agent:      navigator.userAgent,
+      screen:          window.screen.width+'x'+window.screen.height,
+    };
+
+    /* ── SEND 1: GOOGLE SHEETS (Apps Script Web App) ── */
+    fetch('https://script.google.com/macros/s/YOUR_APPS_SCRIPT_ID/exec',{
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
+    }).catch(function(){});
+
+    /* ── SEND 2: ZAPIER (backup / CRM routing) ── */
     fetch('https://hooks.zapier.com/hooks/catch/YOUR_ZAPIER_HOOK/',{
       method:'POST',
-      body:JSON.stringify({
-        source:'Swiss Biologic LP',
-        first_name:fname.value.trim(),
-        last_name:lname.value.trim(),
-        phone:phone.value.trim(),
-        email:email.value.trim(),
-        service:service.value,
-        notes:notes.value.trim(),
-        timestamp:new Date().toLocaleString('en-US',{timeZone:'America/Phoenix'})
-      })
+      body:JSON.stringify(payload)
     }).catch(function(){});
     var btn=document.querySelector('.btn-form-submit');
     btn.textContent='✓ Request Received — We\'ll Be in Touch Within 1 Business Day';
