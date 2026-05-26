@@ -574,9 +574,10 @@ function handleOTClick(){
   window.dataLayer.push({event:'ot_click'});
 }
 function openModal(){
-  document.getElementById('otModal').classList.add('open');
-  document.body.style.overflow='hidden';
   fbq('track','InitiateCheckout',{content_name:'Table Reservation',content_category:'Restaurant'});
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:'ot_click'});
+  window.open('https://www.opentable.com/r/elviras-dc-ranch-phoenix','_blank','noopener,noreferrer');
 }
 function closeModal(){
   document.getElementById('otModal').classList.remove('open');
