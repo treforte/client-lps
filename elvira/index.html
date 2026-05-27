@@ -555,10 +555,32 @@ footer{background:var(--panel);padding:32px 40px;border-top:1px solid var(--bord
 </div>
 
 <script>
-/* ── META PIXEL ── */
-/* Replace YOUR_PIXEL_ID with the actual Meta pixel ID */
+/* ══════════════════════════════════════
+   UTM + CLICK ID CAPTURE
+   Reads URL params on load, persists to
+   sessionStorage so they survive scrolling
+   ══════════════════════════════════════ */
+(function(){
+  var params=['utm_source','utm_campaign','utm_medium','utm_term','utm_content',
+              'gclid','gbraid','wbraid','fbclid','ttclid','msclkid'];
+  var qs=new URLSearchParams(window.location.search);
+  params.forEach(function(p){
+    var val=qs.get(p);
+    if(val) sessionStorage.setItem('el_'+p,val);
+  });
+  sessionStorage.setItem('el_final_url',window.location.href);
+  sessionStorage.setItem('el_referrer',document.referrer||'direct');
+})();
+
+function getParam(name){
+  return new URLSearchParams(window.location.search).get(name)
+    || sessionStorage.getItem('el_'+name)
+    || '';
+}
+
+/* ── META PIXEL — Elvira's DC Ranch ── */
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','YOUR_PIXEL_ID');
+fbq('init','977272447974226');
 fbq('track','PageView');
 
 /* ── NAV SCROLL ── */
@@ -619,19 +641,44 @@ function handleInquiry(){
   if(ok){
     fbq('track','Lead',{content_name:'Reservation Inquiry',content_category:'Restaurant'});
     /* Replace with your webhook/CRM endpoint */
+    /* ── BUILD LEAD PAYLOAD (hidden fields included) ── */
+    var payload={
+      /* Contact */
+      source:         'Elviras DC Ranch LP',
+      first_name:     fname.value.trim(),
+      last_name:      lname.value.trim(),
+      full_name:      fname.value.trim()+' '+lname.value.trim(),
+      phone:          phone.value.trim(),
+      email:          email.value.trim(),
+      party_size:     partysize.value,
+      preferred_date: prefdate.value,
+      occasion:       occasion.value,
+      /* UTM Attribution */
+      utm_source:     getParam('utm_source'),
+      utm_campaign:   getParam('utm_campaign'),
+      utm_medium:     getParam('utm_medium'),
+      utm_term:       getParam('utm_term'),
+      utm_content:    getParam('utm_content'),
+      /* Click IDs */
+      gclid:          getParam('gclid'),
+      fbclid:         getParam('fbclid'),
+      gbraid:         getParam('gbraid'),
+      wbraid:         getParam('wbraid'),
+      ttclid:         getParam('ttclid'),
+      msclkid:        getParam('msclkid'),
+      /* Page context */
+      final_url:      getParam('final_url')||window.location.href,
+      referrer:       getParam('referrer')||document.referrer||'direct',
+      landing_page:   window.location.pathname,
+      /* Timestamps */
+      timestamp:      new Date().toLocaleString('en-US',{timeZone:'America/Phoenix'}),
+      timestamp_utc:  new Date().toISOString(),
+    };
+
+    /* Send to Zapier */
     fetch('https://hooks.zapier.com/hooks/catch/YOUR_ZAPIER_HOOK/',{
       method:'POST',
-      body:JSON.stringify({
-        source:'Elviras LP',
-        first_name:fname.value.trim(),
-        last_name:lname.value.trim(),
-        phone:phone.value.trim(),
-        email:email.value.trim(),
-        party_size:partysize.value,
-        preferred_date:prefdate.value,
-        occasion:occasion.value,
-        timestamp:new Date().toLocaleString('en-US',{timeZone:'America/Phoenix'})
-      })
+      body:JSON.stringify(payload)
     }).catch(function(){});
     /* Success state */
     var btn=document.querySelector('.btn-form');
